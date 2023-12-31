@@ -1,0 +1,28 @@
+.style-label {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.style-input {
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  height: 30px;
+}
+
+.style-textarea {
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  height: 100px;
+}
+
+.style-btn {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  width: 100px;
+  margin-left: auto;
+}

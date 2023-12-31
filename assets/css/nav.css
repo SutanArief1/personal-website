@@ -1,0 +1,36 @@
+.style-nav {
+  background-color: #f4f3f3;
+  padding: 20px;
+}
+
+.style-nav-ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.style-nav-menu {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.style-navlink {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.style-nav-btn {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  width: 100px;
+  margin-left: auto;
+  text-decoration: none;
+}
+
+.style-navbar-logo {
+  width: 50px;
+}
