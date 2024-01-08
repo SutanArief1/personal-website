@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<head>
+  <title>My Project</title>
+  <link rel="stylesheet" href="assets/css/index.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <link rel="stylesheet" href="assets/css/contact.css">
+  <link rel="stylesheet" href="assets/css/project.css">
+  <style>
+    .style-form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+
+    .style-form--landscape {
+      flex-direction: row;
+    }
+
+    .style-form--checkbox {
+      width: 50%;
+    }
+
+    .label-checkbox {
+      color: #514a4a;
+    }
+
+    .btn-upload {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      background-color: white;
+      border: none;
+      border-radius: 6px;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    }
+
+    .btn-upload__cta,
+    .btn-upload__icon {
+      padding: 10px 20px;
+    }
+
+    .btn-upload__cta {
+      background-color: #e4e4e4;
+      color: #b2abab;
+      border-radius: 6px;
+    }
+
+    .btn-upload__file-name {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+    }
+  </style>
+</head>
+
+<body style="background-color: #dce0e4;">
+  <nav class="style-nav">
+    <ul class="style-nav-ul">
+      <div class="style-nav-menu">
+        <li>
+          <img src="assets/img/dumbways.png" class="style-navbar-logo">
+        </li>
+        <li>
+          <a href="index.html" class="style-navlink">Home</a>
+        </li>
+        <li>
+          <a href="project.html" class="style-navlink">My Project</a>
+        </li>
+      </div>
+      <div class="style-nav-menu">
+        <li>
+          <a href="contact.html" class="style-nav-btn">Contact Me</a>
+        </li>
+      </div>
+    </ul>
+  </nav>
+  <div style="margin-top: 100px;">
+    <h1 style="text-align: center;">ADD MY PROJECT</h1>
+  </div>
+  <div style="display: flex; width: 100%; justify-content: center;">
+    <div style="display: flex; flex-direction: column; justify-content: center; width: 100%; padding: 0 20%;">
+      <div class="style-form">
+        <label for="projectName">Project Name</label>
+        <input type="text" class="style-input" id="projectName">
+      </div>
+      <div style="display: flex; gap: 10px;">
+        <div class="style-form">
+          <label for="startDate">Start Date</label>
+          <input type="date" class="style-input" id="startDate">
+        </div>
+        <div class="style-form">
+          <label for="endDate">End Date</label>
+          <input type="date" class="style-input" id="endDate">
+        </div>
+      </div>
+      <div class="style-form">
+        <label for="description">Description</label>
+        <textarea class="style-textarea" id="description"></textarea>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <h3>Technologies</h3><br>
+        <div style="display: flex; flex-direction: row; flex-wrap: wrap;">
+          <div class="style-form style-form--landscape style-form--checkbox">
+            <input type="checkbox" name="nodeJs" id="technologies">
+            <label for="nodeJs" class="label-checkbox">Node Js</label>
+          </div>
+          <div class="style-form style-form--landscape style-form--checkbox">
+            <input type="checkbox" name="reactJs" id="technologies">
+            <label for="reactJs" class="label-checkbox">React Js</label>
+          </div>
+          <div class="style-form style-form--landscape style-form--checkbox">
+            <input type="checkbox" name="nextJs" id="technologies">
+            <label for="nextJs" class="label-checkbox">Next Js</label>
+          </div>
+          <div class="style-form style-form--landscape style-form--checkbox">
+            <input type="checkbox" name="typeScript" id="technologies">
+            <label for="typeScript" class="label-checkbox">TypeScript</label>
+          </div>
+        </div>
+      </div>
+      <div class="style-form" onclick="selectFile()">
+        <label for="uploadImage">Upload Image</label>
+        <button class="btn-upload">
+          <div class="btn-upload__cta">choose</div>
+          <div class="btn-upload__file-name" id="file-name"></div>
+          <div class="btn-upload__icon"><img src="assets/img/attachment.png" style="width: auto; height: 20px;"></div>
+          <input type="file" class="style-input" style="display: none;" id="select-file" accept="image/*">
+        </button>
+      </div>
+      <button class="style-btn" onclick="submitData()" style="margin-bottom: 50px;">submit</button>
+    </div>
+  </div>
+
+  <div style="background-color: white; padding: 20px 10%;">
+    <div>
+      <h1 style="text-align: center; padding: 50px;">MY PROJECT</h1>
+    </div>
+    <div class="list-project" id="list-project">
+    </div>
+  </div>
+
+  <script src="assets/js/project.js"></script>
+</body>
+
+</html>
