@@ -48,30 +48,6 @@ function submitData() {
   renderAllProjectCard(listProjectData, container)
 }
 
-function getIconPathByCategory(technology) {
-  // console.log(technology)
-  let iconPath = ''
-  switch (technology) {
-    case 'nodeJs':
-      iconPath = 'assets/img/node-js.png'
-      break;
-    case 'reactJs':
-      iconPath = 'assets/img/react.png'
-      break;
-    case 'nextJs':
-      iconPath = 'assets/img/next-js.png'
-      break;
-    case 'typeScript':
-      iconPath = 'assets/img/typescript.png'
-      break;
-    default:
-      console.error('Category not found')
-      break;
-  }
-
-  return iconPath
-}
-
 function renderAllProjectCard(listProjectData, parentElement) {
   let htmlStringContent = ""
 
@@ -81,13 +57,15 @@ function renderAllProjectCard(listProjectData, parentElement) {
     const stringTechnologies = technologies.map((techItem) => {
       return `<img src='${getIconPathByCategory(techItem)}' />`
     }).join(' ')
+    const getGapTime = getDurationTime(startDate, endDate)
     htmlStringContent += `
       <div class="project-card">
+      
         <img
           src="${URL.createObjectURL(fileImage)}"
           alt="#" class="project-card__img-thumbnail" />
         <h3>${projectName}</h3>
-        <p class="project-card__time-post">Duration : 3 Months ago</p>
+        <p class="project-card__time-post">Duration : ${getGapTime}</p>
         <p class="project-card__desc">${description}</p>
         <div class="project-card__list-category">
           ${stringTechnologies}
