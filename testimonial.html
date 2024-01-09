@@ -36,6 +36,29 @@
   </nav>
   <div class="container">
     <h1 style="text-align: center;">My Testimonials</h1>
+    <div class="container-rating">
+      <h2> Rating By Star</h2>
+      <div class="rating">
+        <button class="rating-btn" onclick="renderAllTestimonial()">
+          All
+        </button>
+        <button class="rating-btn" onclick="filterTestimonial(1)">
+          1 <img src="assets/img/star.png" />
+        </button>
+        <button class="rating-btn" onclick="filterTestimonial(2)">
+          2 <img src="assets/img/star.png" />
+        </button>
+        <button class="rating-btn" onclick="filterTestimonial(3)">
+          3 <img src="assets/img/star.png" />
+        </button>
+        <button class="rating-btn" onclick="filterTestimonial(4)">
+          4 <img src="assets/img/star.png" />
+        </button>
+        <button class="rating-btn" onclick="filterTestimonial(5)">
+          5 <img src="assets/img/star.png" />
+        </button>
+      </div>
+    </div>
     <div class="testimonial-cards" id="testimonials">
     </div>
   </div>
