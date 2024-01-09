@@ -4,30 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detail Project</title>
+  <title>Testimonial</title>
   <link rel="stylesheet" href="assets/css/index.css">
   <link rel="stylesheet" href="assets/css/nav.css">
-  <style>
-    .list-category__icon {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      padding: 10px 10px 10px 0;
-    }
-
-    .list-category__icon img {
-      height: 25px;
-      width: auto;
-    }
-
-    .list-category__icon p {
-      color: #585252;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" href="assets/css/testimonial.css">
 </head>
 
-<body style="background-color: #dce0e4;">
+<body>
   <nav class="style-nav">
     <ul class="style-nav-ul">
       <div class="style-nav-menu">
@@ -41,7 +24,7 @@
           <a href="project.html" class="style-navlink">My Project</a>
         </li>
         <li>
-          <a href="testimonial.html" class="style-navlink">Testimonial</a>
+          <a href="testimonial.html" class="style-navlink active">Testimonial</a>
         </li>
       </div>
       <div class="style-nav-menu">
@@ -51,11 +34,13 @@
       </div>
     </ul>
   </nav>
-  <div style="margin-top: 100px; padding: 20px 10%;" id="detail-project">
+  <div class="container">
+    <h1 style="text-align: center;">My Testimonials</h1>
+    <div class="testimonial-cards" id="testimonials">
+    </div>
   </div>
 
-  <script src="assets/js/helper.js"></script>
-  <script src="assets/js/detail-project.js"></script>
+  <script src="assets/js/testimonial.js"></script>
 </body>
 
 </html>

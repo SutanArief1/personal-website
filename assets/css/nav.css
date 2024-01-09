@@ -21,6 +21,10 @@
   font-weight: bold;
 }
 
+.active {
+  color: #29ADAF;
+}
+
 .style-nav-btn {
   padding: 10px;
   background-color: black;
