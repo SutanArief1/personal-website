@@ -21,16 +21,16 @@ function getIconPathByCategory(technology) {
   let iconPath = ''
   switch (technology) {
     case 'nodeJs':
-      iconPath = 'assets/img/node-js.png'
+      iconPath = '/assets/img/node-js.png'
       break;
     case 'reactJs':
-      iconPath = 'assets/img/react.png'
+      iconPath = '/assets/img/react.png'
       break;
     case 'nextJs':
-      iconPath = 'assets/img/next-js.png'
+      iconPath = '/assets/img/next-js.png'
       break;
     case 'typeScript':
-      iconPath = 'assets/img/typescript.png'
+      iconPath = '/assets/img/typescript.png'
       break;
     default:
       console.error('Category not found')

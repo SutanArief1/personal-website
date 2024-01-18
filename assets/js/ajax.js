@@ -32,7 +32,7 @@ async function renderAllTestimonial() {
         <img src="${image}" alt="testimonial" class="testimonial__profile-picture" />
         <p class="testimonial__content">"${content}"</p>
         <p class="testimonial__author">- ${author}</p>
-        <p class="testimonial__rating"><img src="assets/img/star.png" /> ${rating}</p>
+        <p class="testimonial__rating"><img src="/assets/img/star.png" /> ${rating}</p>
       </div>
     `
   })
@@ -59,7 +59,7 @@ async function filterTestimonial(rating) {
             <img src="${image}" alt="testimonial" class="testimonial__profile-picture" />
             <p class="testimonial__content">"${content}"</p>
             <p class="testimonial__author">- ${author}</p>
-            <p class="testimonial__rating"><img src="assets/img/star.png" /> ${rating}</p>
+            <p class="testimonial__rating"><img src="/assets/img/star.png" /> ${rating}</p>
           </div>
         `
   })

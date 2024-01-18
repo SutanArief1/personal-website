@@ -4,7 +4,7 @@ const projectData = {
   endDate: '25 Mar 2024',
   description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
   technologies: ['reactJs', 'typeScript'],
-  fileImage: 'assets/img/b.jpg'
+  fileImage: '/assets/img/b.jpg'
 }
 
 const container = document.getElementById('detail-project')
@@ -31,11 +31,11 @@ function renderDetailProject(projectData, container) {
     <div>
       <h3>Duration</h3><br>
       <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 30px;">
-        <img src="assets/img/calendar.png" alt="calendar" style="height: 25px; width: 25px;">
+        <img src="/assets/img/calendar.png" alt="calendar" style="height: 25px; width: 25px;">
         <p style="color: #585252; font-weight: bold;">${startDate} - ${endDate}</p>
       </div>
       <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 60px;">
-        <img src="assets/img/clock.png" alt="duration" style="height: 25px; width: 25px;">
+        <img src="/assets/img/clock.png" alt="duration" style="height: 25px; width: 25px;">
         <p style="color: #585252; font-weight: bold;">${getGapTime}</p>
       </div>
       <h3>Technologies</h3><br>
