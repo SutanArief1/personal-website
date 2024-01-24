@@ -14,11 +14,10 @@
       display: flex;
       gap: 10px;
       align-items: center;
-      padding: 10px 10px 10px 0;
     }
 
     .list-category__icon img {
-      height: 25px;
+      height: 40px;
       width: auto;
     }
 
@@ -62,6 +61,38 @@
     </div>
   </nav>
   <div style="margin-top: 100px; padding: 20px 10%;" id="detail-project">
+    <h1 style="text-align: center; margin-bottom: 30px;">{{dataProject.projectName}}</h1>
+    <div style="display: flex; flex-direction: column;">
+      <div style="display: flex; margin-bottom: 50px;">
+        <div style="width: 70%; min-width: 320px; height: auto; aspect-ratio: 2/1; margin-right: 30px;">
+          <img src="/assets/img/b.jpg" alt="thumbnail" style="object-fit: cover; width: 100%; height: 100%">
+        </div>
+        <div>
+          <h3>Duration</h3><br>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 30px;">
+            <img src="/assets/img/calendar.png" alt="calendar" style="height: 25px; width: 25px;">
+            <p style="color: #585252; font-weight: bold;">{{dataProject.startDate}} - {{dataProject.endDate}}</p>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 60px;">
+            <img src="/assets/img/clock.png" alt="duration" style="height: 25px; width: 25px;">
+            <p style="color: #585252; font-weight: bold;">{{dataProject.getGapTime}}</p>
+          </div>
+          <h3>Technologies</h3><br>
+          <div style="display: flex; flex-wrap: wrap; width: 280px;">
+            <div class="list-category__icon">
+              {{#each dataProject.iconCategory}}
+              <img src="{{this}}" />
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex;">
+        <div>
+          <p class="lh-base fs-5" style="text-align: justify;">{{dataProject.description}}</p>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script src="/assets/js/helper.js"></script>

@@ -17,25 +17,34 @@ function getDurationTime(startDate, endDate) {
 
 }
 
-function getIconPathByCategory(technology) {
-  let iconPath = ''
-  switch (technology) {
-    case 'nodeJs':
-      iconPath = '/assets/img/node-js.png'
-      break;
-    case 'reactJs':
-      iconPath = '/assets/img/react.png'
-      break;
-    case 'nextJs':
-      iconPath = '/assets/img/next-js.png'
-      break;
-    case 'typeScript':
-      iconPath = '/assets/img/typescript.png'
-      break;
-    default:
-      console.error('Category not found')
-      break;
+function getIconPathByCategory(categories) {
+  let result = []
+
+  if (!categories) {
+    result = []
+  } else {
+    categories.forEach(el => {
+      let iconPath = ''
+
+      if (el === 'nodeJs') {
+        iconPath += '../assets/img/node-js.png'
+      } else if (el === 'reactJs') {
+        iconPath += '../assets/img/react.png'
+      } else if (el === 'nextJs') {
+        iconPath += '../assets/img/next-js.png'
+      } else if (el === 'typescript') {
+        iconPath += '../assets/img/typescript.png'
+      } else {
+        console.error('Category not found')
+      }
+
+      result.push(iconPath)
+
+    });
   }
 
-  return iconPath
+  return result
 }
+
+
+module.exports = { getIconPathByCategory, getDurationTime };
