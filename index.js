@@ -37,7 +37,6 @@ function handlePostProject(req, res) {
   let getGapTime = getDurationTime(startDate, endDate)
 
   dataProject.unshift({ projectName, description, iconCategory, getGapTime, startDate, endDate })
-  console.log('ini data setelah ditambah', dataProject);
 
   res.redirect('/project')
 }
@@ -77,16 +76,11 @@ function handleEditProject(req, res) {
   const { id } = req.params
   const { projectName, startDate, endDate, description, categories, image } = req.body
 
-  dataProject[id] = {
-    projectName,
-    description,
-    iconCategory: getIconPathByCategory(categories),
-    getGapTime: getDurationTime(startDate, endDate),
-    startDate,
-    endDate
-  };
+  let iconCategory = getIconPathByCategory(categories)
+  let getGapTime = getDurationTime(startDate, endDate)
 
-  console.log('ini data setelah diupdate', dataProject);
+  dataProject.splice(id, 1, { projectName, description, iconCategory, getGapTime, startDate, endDate })
+
   res.redirect('/project')
 }
 
