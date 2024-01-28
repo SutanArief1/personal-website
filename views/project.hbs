@@ -74,14 +74,37 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/">Home</a>
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
+          {{#if isLogin}}
           <li class="nav-item">
-            <a class="nav-link active" href="/project">Add Project</a>
+            <a class="nav-link" href="/project">Add Project</a>
           </li>
+          {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/project">List Project</a>
+          </li>
+          {{/if}}
           <li class="nav-item">
             <a class="nav-link" href="/testimonial">Testimonial</a>
           </li>
+        </ul>
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          {{#if isLogin}}
+          <li class="nav-item">
+            <a class="nav-link fw-bold active text-danger">Hello, {{user}}</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link" href="/logout">Logout</a>
+          </li>
+          {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/register">Register</a>
+          </li>
+          <li class="nav-item ms-3">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+          {{/if}}
         </ul>
         <a href="/contact">
           <button class="btn btn-outline-success" style="background-color: black; color: white;">Contact Me</button>
@@ -90,11 +113,12 @@
     </div>
   </nav>
   <div>
+    {{#if isLogin}}
     <div style="margin-top: 100px;">
       <h1 style="text-align: center;">ADD MY PROJECT</h1>
     </div>
     <div class="d-flex flex-column align-items-center justify-content-center">
-      <form class="w-75 p-3" action="/project" method="post">
+      <form class="w-75 p-3" action="/project" method="post" enctype="multipart/form-data">
         <div class="mb-3">
           <label for="projectName" class="form-label">Project Name</label>
           <input class="form-control shadow p-3 mb-5 bg-body-tertiary rounded" type="text" id="projectName"
@@ -155,42 +179,51 @@
         <button type="submit" class="btn btn-dark d-flex ms-auto">Submit</button>
       </form>
     </div>
+    {{/if}}
+
+    {{#if isLogin}}
     <div style="background-color: white; padding: 20px 10%;">
-      <div>
-        <h1 style="text-align: center; padding: 50px;">MY PROJECT</h1>
-      </div>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        {{#each dataProject}}
-        <div class="col">
-          <div class="card h-100 p-2 border border-secondary">
-            <img src="../assets/img/b.jpg" alt="#" class="project-card__img-thumbnail" />
-            <div class="card-body">
-              <h5 class="card-title fs-4 fw-bolder">
-                <a href="/detail-project/{{@index}}" target="_blank"
-                  style="text-decoration: none; color:black">{{this.projectName}}</a>
-              </h5>
-              <p class="project-card__time-post">Duration : {{this.getGapTime}}</p>
-              <div class="mb-3 overflow-hidden" style="height: 75px;">
-                <p class="card-text">{{this.description}}</p>
-              </div>
-              <div class="project-card__list-category">
-                {{#each iconCategory}}
-                <img src="{{this}}" />
-                {{/each}}
-              </div>
-              <div class="project-card__cta">
-                <a href="/edit-project/{{@index}}" style="text-decoration: none; color: #b8c3c7">
-                  <button type="button" class="btn btn-dark w-100">Edit</button></a>
-                <a href="/delete/{{@index}}" style="text-decoration: none; color: #b8c3c7">
-                  <button type="button" class="btn btn-dark w-100">Delete</button></a>
+      {{else}}
+      <div style="background-color: #dce0e4; padding: 20px 10%;">
+        {{/if}}
+        <div>
+          <h1 style="text-align: center; padding: 50px;">MY PROJECT</h1>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          {{#each data}}
+          <div class="col">
+            <div class="card h-100 p-2 border border-secondary">
+              <img src="/uploads/{{this.image}}" alt="Thumbnail Project" class="project-card__img-thumbnail" />
+              <div class="card-body">
+                <h5 class="card-title fs-4 fw-bolder">
+                  <a href="/detail-project/{{this.id}}" target="_blank"
+                    style="text-decoration: none; color:black">{{this.name}}</a>
+                </h5>
+                <p class="project-card__author">Author : {{this.author}}</p>
+                <p class="project-card__time-post">Duration : {{this.duration}}</p>
+                <div class="mb-3 overflow-hidden" style="height: 75px;">
+                  <p class="card-text">{{this.description}}</p>
+                </div>
+                <div class="project-card__list-category">
+                  {{#each dataIcon}}
+                  <img src="{{this}}" alt="iconCategory" />
+                  {{/each}}
+                </div>
+                {{#if isLogin}}
+                <div class="project-card__cta">
+                  <a href="/edit-project/{{this.id}}" style="text-decoration: none; color: #b8c3c7">
+                    <button type="button" class="btn btn-dark w-100">Edit</button></a>
+                  <a href="/delete/{{this.id}}" style="text-decoration: none; color: #b8c3c7">
+                    <button type="button" class="btn btn-dark w-100">Delete</button></a>
+                </div>
+                {{/if}}
               </div>
             </div>
           </div>
+          {{/each}}
         </div>
-        {{/each}}
       </div>
     </div>
-  </div>
   </div>
 
   <script src="/assets/js/helper.js"></script>

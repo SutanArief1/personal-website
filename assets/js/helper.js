@@ -17,33 +17,24 @@ function getDurationTime(startDate, endDate) {
 
 }
 
-function getIconPathByCategory(categories) {
-  let result = []
+function getIconPathByCategory(category) {
+  let iconPath = ''
 
-  if (!categories) {
-    result = []
+  if (!category) {
+    return iconPath
+  } else if (category === 'nodeJs') {
+    iconPath = '../assets/img/node-js.png'
+  } else if (category === 'reactJs') {
+    iconPath = '../assets/img/react.png'
+  } else if (category === 'nextJs') {
+    iconPath = '../assets/img/next-js.png'
+  } else if (category === 'typescript') {
+    iconPath = '../assets/img/typescript.png'
   } else {
-    categories.forEach(el => {
-      let iconPath = ''
-
-      if (el === 'nodeJs') {
-        iconPath += '../assets/img/node-js.png'
-      } else if (el === 'reactJs') {
-        iconPath += '../assets/img/react.png'
-      } else if (el === 'nextJs') {
-        iconPath += '../assets/img/next-js.png'
-      } else if (el === 'typescript') {
-        iconPath += '../assets/img/typescript.png'
-      } else {
-        console.error('Category not found')
-      }
-
-      result.push(iconPath)
-
-    });
+    console.error('Category not found')
   }
 
-  return result
+  return iconPath
 }
 
 
